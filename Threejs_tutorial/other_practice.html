@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NO Function three.js app</title>
+
+
+
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Three.js library -->
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- GLTFLoader.js source -->
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- OrbitControl -->
+    <!--  找不到 <script src="/libs/OrbitControls.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/16/Stats.min.js"
+        integrity="sha512-by6gRzSfA6HGshqED4Jnc6n/jJ9ojBvjbEbCvsrLzErlIiWswh1qYfYnvSzZg8SmbqVCk/v0XwlpGzJxIDPILw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.min.js">
+    </script> -->
+
+
+
+
+    <script>
+        // const renderer = new THREE.WebGLRenderer();
+        scene = new THREE.Scene();
+        // 場景還要多說麻
+
+        camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+        // 設定相機位置
+        camera.position.set(600, 20, -200);
+        // 相機聚焦到螢幕中央
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        // --------------------------
+
+        // 新增 半球光源 HemisphereLight：建立室外效果更加自然的光源
+        light = new THREE.HemisphereLight(0xffffff, 0x444444);
+        light.position.set(0, 20, 0);
+        scene.add(light);
+        light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(0, 20, 10);
+        light.castShadow = true;
+        scene.add(light);
+
+        // 新增 環境光 AmbientLight：
+
+        var ambiColor = '#0C0C0C';
+        var ambientLight = new THREE.AmbientLight(ambiColor);
+        scene.add(ambientLight);
+
+
+        // GridHelper 可用於新增網格輔助線，也可用於裝飾，通過 GridHelper(size, divisions, colorCenterLine, colorGrid) 實現。
+
+        // size：網格寬度，預設值為 10。
+        // divisions：等分數，預設值為 10。
+        // colorCenterLine：中心線顏色，預設值為 0x444444。
+        // colorGrid： 格線顏色，預設值為 0x888888。
+        var grid = new THREE.GridHelper(1000, 100, 0x000000, 0x000000);
+        grid.material.opacity = 0.1;
+        grid.material.transparent = true;
+        grid.position.set(0, -240, 0);
+        scene.add(grid);
+
+        // 通過相機控制元件 OrbitControls 可以對三維場景進行縮放、平移、旋轉操作，本質上改變的並不是場景，而是相機的引數。開發時 OrbitControls.js 需要單獨引入ps.在最上面了。
+
+        // controls = new THREE.OrbitControls(camera, renderer.domElement);
+        // controls.target.set(0, 0, 0);
+        // controls.update();
+
+        // stats 是一個 Three.js 開發的輔助庫，主要用於檢測動畫執行時的幀數。stats.js 也需要單獨引入。
+        // stats = new Stats();
+        // container.appendChild(stats.dom);
+
+
+
+        var loader = new THREE.GLTFLoader();
+        loader.load('./model/untitled.gltf', function (object) {
+            object.scene.traverse(function (child) {
+                if (child.isMesh) {
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
+            object.scene.rotation.y = Math.PI / 2;
+            object.scene.position.set(0, -240, 0);
+            object.scene.scale.set(0.33, 0.33, 0.33);
+            model = object.scene;
+            scene.add(object.scene);
+        });
+ 
+        // 通過 requestAnimationFrame 重新整理頁面的方法新增轉盤動畫效果。window.requestAnimationFrame() 告訴瀏覽器希望執行一個動畫，並且要求瀏覽器在下次重繪之前呼叫指定的回撥函數更新動畫。該方法需要傳入一個回撥函數作為引數，該回撥函數會在瀏覽器下一次重繪之前執行。
+
+        function animate() {
+            requestAnimationFrame(animate);
+            // 隨著頁面重繪不斷改變場景的rotation.y來實現旋轉
+            scene.rotation.y -= 0.015;
+            renderer.render(scene, camera);
+        }
+
+    </script>
+</body>
+
+</html>
