@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;900&display=swap');
+
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+body {
+    margin: 0;
+    background-color: #d8d8d8;
+    height: 1000px;
+}
+
+
+
+nav {
+    color: #fff;
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0px 5%;
+}
+
+logo {
+    height: 30px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    padding: 0px 5%;
+
+    section {
+        display: flex;
+        .btn_scroll_down{
+            width: 78px;
+            height: 78px;
+            border-radius: 100%;
+            background-color: #fcee21;
+            position: absolute;
+            left: 8px;
+            bottom: 0px;
+        }
+        text_area {
+            
+
+            width: 50%;
+            span.title_name {
+                font-size: 185px;
+                line-height:-10%;
+                font-weight: 900;
+            }
+
+            div.top{
+                width: 100%;
+                margin: 0px;
+
+                display: flex;
+                justify-content: end;
+            }
+            .div_for_lr{
+                display: flex;
+                align-items: flex-end;
+            }
+            b.title_sm{
+                font-size: 42px;
+                vertical-align:bottom;
+            }
+            b.writing-lr {
+                -webkit-writing-mode: vertical-lr;  writing-mode: vertical-lr;
+            }
+            div.bottom{
+                display: flex;
+                justify-content: end;
+                .title_name_eng{
+                    font-size: 76px;
+                }
+                .span_for_inner{
+                    margin-left: 2px;
+                    .inner{
+                        font-weight: 500;
+                        color: #fff;
+                        background-color: #111;
+                        padding: 0px  0px 10px 0px ;
+                    }
+                }
+            }
+
+            
+        }
+
+        iframe {
+            width: 50%;
+            height: 100%;
+            top: 0px;
+        }
+    }
+}

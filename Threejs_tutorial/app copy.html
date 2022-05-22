@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jryuan作品集</title>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- aos -->
+
+    <!-- 上面這是 data-scroll 的外掛 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+
+        * {
+            font-family: 'Paytone One', sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            margin: 0;
+            background-color: #C6C0BA;
+            height: 1000px;
+
+        }
+
+        nav {
+            color: #fff;
+            width: 100%;
+            height: 60px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0px 5%;
+        }
+
+        logo {
+            height: 30px;
+        }
+
+        canvas {
+            /* border: solid 1px white; */
+            width: 100%;
+            height: 2vh;
+            position: absolute;
+            top: 40px;
+
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 0px 5%;
+
+        }
+
+        .banner_title {
+            font-size: 150px;
+            font-family: 'Paytone One', sans-serif, 微軟正黑體;
+            color: #000;
+            margin: 0px;
+            line-height: 1;
+            /* -webkit-text-stroke: 2px #111; */
+        }
+
+        .banner_title1 {
+            -webkit-text-stroke: 1px #fff;
+        }
+
+        .banner_title2 {
+            /* color: #00B3EB; */
+            color: #000;
+        }
+
+        .banner_title3 {
+            color: #FFC91E;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header_container">
+        <nav class="nav">
+            <logo class="logo">NavBar</logo>
+            <menu class="burger">三</menu>
+        </nav>
+    </header>
+
+    <main class="about" id="scroll-zone" data-scroll-target="#scroll-zone">
+        <!-- <q data-scroll data-scroll-speed="2" data-scroll-position="top" data-estext="Web design<br>網站設計" data-color="#0037b4">W</q>  參考資料 -->
+        <div data-scroll data-scroll-speed="2" data-scroll-position="top"><b class="banner_title banner_title1">I</b>
+        </div>
+        <div data-scroll data-scroll-speed="2" data-scroll-position="top"></div><b
+            class="banner_title banner_title2">NeeD a</b></div>
+        <div data-scroll data-scroll-speed="2" data-scroll-position="top"></div><b class="banner_title banner_title3">
+            <a>J</a>ob</b></div>
+    </main>
+
+    <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        NCHOR PLACEMENT
+    </div>
+
+
+    <!-- Three.js library -->
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- GLTFLoader.js source -->
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- 相機控制器(?) 例如用滑鼠選轉相機 -->
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        const camera = new THREE.PerspectiveCamera(11, window.innerWidth / window.innerHeight, 1, 1000);
+
+        camera.position.set(0, 5, 10);
+
+        // 設置能控制旋轉的鏡頭(相機,算圖)
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.target.set(0, 0, 0);
+        controls.enableZoom = true; //啟用縮放
+        controls.enableDamping = true; // 啟用阻尼效果
+        controls.dampingFactor = 0.25; // 阻尼系數
+        controls.autoRotate = true; //啟用自動旋轉
+
+        // 場景
+        const scene = new THREE.Scene();
+        let Mesh;
+        let light;
+
+        function init() {
+            // scene.background = new THREE.Color('#333');
+            camera.position.set(0, 10, 20);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+        }
+
+        function setLight() {
+            light = new THREE.HemisphereLight(0xffffff, 0x444444);
+            light.position.set(0, 20, 0);
+            scene.add(light);
+
+            light2 = new THREE.DirectionalLight(0xffffff);
+            light2.position.set(10, 0, 0);
+
+            light2.castShadow = true;
+            scene.add(light2);
+
+            // 定向光 顏色,強度
+
+            light3 = new THREE.SpotLight(0xffffff, 0.5);
+            light3.position.set(-1000, 500, 1000);
+            // light3.lookAt(0, 0, 0);
+            light3.castShadow = true;
+            light3.shadow.mapSize.width = 1024;
+            light3.shadow.mapSize.height = 1024;
+
+            light3.shadow.camera.near = 500;
+            light3.shadow.camera.far = 4000;
+            light3.shadow.camera.fov = 30;
+            scene.add(light3);
+
+
+            // 環境光
+            var ambiColor = '#0C0C0C';
+            var ambientLight = new THREE.AmbientLight(ambiColor);
+
+            scene.add(ambientLight);
+
+            // Light.lookAt(0, 0, 0);
+
+        }
+
+        function loadGLTF() {
+            let balloonLoader = new THREE.GLTFLoader();
+
+            balloonLoader.load('./model/selflimit2.gltf', (gltf) => {
+                Mesh = gltf.scene;
+                Mesh.scale.set(1, 1, 1);
+                scene.add(Mesh);
+                Mesh.position.x = 0;
+                Mesh.position.y = 0;
+                Mesh.position.z = 0;
+            });
+        }
+        // 旋轉的動畫
+        function animate() {
+            requestAnimationFrame(animate);
+            if (Mesh && Mesh.rotation) {
+                Mesh.rotation.y -= 0.005;
+            }
+            renderer.render(scene, camera);
+        }
+
+        var pointerX = 0;
+        var pointerY = 0;
+
+
+
+
+        init();
+        setLight();
+        loadGLTF();
+        animate();
+    </script>
+
+    <!-- <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector("#scroll-zone"),
+            smooth: true,
+            lerp: 0.01,
+            repeat: true,
+            tablet: {
+                smooth: true,
+                breakpoint: 250
+            },
+            smartphone: {
+                smooth: false
+            }
+        });
+
+    </script> -->
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

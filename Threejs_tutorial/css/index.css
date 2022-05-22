@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;900&display=swap");
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #000;
+}
+
+body {
+  margin: 0;
+  background-color: #d8d8d8;
+  height: 1000px;
+}
+
+nav {
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 5%;
+}
+
+logo {
+  height: 30px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  padding: 0px 5%;
+}
+
+main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main section .btn_scroll_down {
+  width: 78px;
+  height: 78px;
+  border-radius: 100%;
+  background-color: #fcee21;
+  position: absolute;
+  left: 8px;
+  bottom: 0px;
+}
+
+main section text_area {
+  width: 50%;
+}
+
+main section text_area span.title_name {
+  font-size: 185px;
+  line-height: -10%;
+  font-weight: 900;
+}
+
+main section text_area div.top {
+  width: 100%;
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+main section text_area .div_for_lr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+main section text_area b.title_sm {
+  font-size: 42px;
+  vertical-align: bottom;
+}
+
+main section text_area b.writing-lr {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+}
+
+main section text_area div.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+main section text_area div.bottom .title_name_eng {
+  font-size: 76px;
+}
+
+main section text_area div.bottom .span_for_inner {
+  margin-left: 2px;
+}
+
+main section text_area div.bottom .span_for_inner .inner {
+  font-weight: 500;
+  color: #fff;
+  background-color: #111;
+  padding: 0px  0px 10px 0px;
+}
+
+main section iframe {
+  width: 50%;
+  height: 100%;
+  top: 0px;
+}
+/*# sourceMappingURL=index.css.map */
