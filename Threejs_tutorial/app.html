@@ -18,7 +18,9 @@
 
         body {
             margin: 0;
-            background-color: #d8d8d8;
+            /* background-color: #d8d8d8; */
+            background-color: unset;
+            overflow: hidden;
         }
 
     </style>
@@ -38,12 +40,14 @@
 
         camera.position.set(0, 5, 10);
 
+
         // 設置能控制旋轉的鏡頭(相機,算圖)
         controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.target.set(0, 0, 0);
-        controls.enableZoom = true; //啟用縮放
+        controls.enableZoom = false; //啟用縮放
         controls.enableDamping = true; // 啟用阻尼效果
         controls.dampingFactor = 0.25; // 阻尼系數
+        controls.enablePan = false; //要不要開水平移動
         controls.autoRotate = true; //啟用自動旋轉
 
         // 場景
@@ -104,6 +108,7 @@
                 Mesh.position.x = 0;
                 Mesh.position.y = 0;
                 Mesh.position.z = 0;
+                Mesh.rotation.x = -0.5;
             });
         }
         // 旋轉的動畫
