@@ -42,11 +42,14 @@ main {
 
     section {
         display: flex;
-
+        @media (max-width:1100px) {
+            flex-direction: column-reverse;
+            
+        }
         text_area {
 
 
-            width: 50%;
+            width: 60%;
 
             span.title_name {
                 font-size: 185px;
@@ -102,14 +105,23 @@ main {
 
         section.right {
             scale: 1.0;
-            width: 50%;
+            width: 40%;
             position: relative;
             overflow: visible;
-            
+            @media (max-width:1100px){
+                width: 100%;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & .iframe{
+                    width: 100%;
+                }
+            }
 
             &:hover iframe {
                 transform: scale(1.02);
-
+                background-color: #333;
             }
 
             iframe {
@@ -117,11 +129,17 @@ main {
                 height: 100%;
                 overflow: visible;
                 transition-duration: 1s;
+                margin: 16px ;
+                border-radius: 18px;
+                @media (max-width:1500px) {
+                    width: 70%;
+                    
+                }
             }
 
             .btn_scroll_down {
-                width: 10vw;
-                height: 10vw;
+                width: 8vw;
+                height: 8vw;
                 text-align: center;
                 border-radius: 100%;
 
@@ -135,6 +153,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
 
                 &:before {
                     content: '';
@@ -157,7 +176,7 @@ main {
                 }
                 
                 &:hover {
-                    transform: scale(1.4);
+                    transform: scale(1.2);
                     &:before{
                         transform: scale(1);
                     }
@@ -175,8 +194,5 @@ main {
         // iframe::-webkit-scrollbar {
         //     display: none;
         // }
-    }
-    @media screen {
-        
     }
 }
