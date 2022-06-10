@@ -32,6 +32,14 @@ logo {
   height: 30px;
 }
 
+#wrapper-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  position: absolute;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +52,6 @@ main {
   width: 100%;
   height: calc(100vh - 100px);
   overflow: hidden;
-  padding: 0px 5%;
 }
 
 main section {
@@ -63,6 +70,8 @@ main section {
 }
 
 main section text_area {
+  pointer-events: none;
+  z-index: 1;
   width: 60%;
 }
 
@@ -130,7 +139,6 @@ main section text_area div.bottom .span_for_inner .inner {
 main section section.right {
   scale: 1.0;
   width: 40%;
-  position: relative;
   overflow: visible;
 }
 
@@ -156,10 +164,10 @@ main section section.right {
 main section section.right:hover iframe {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-  background-color: #333;
 }
 
 main section section.right iframe {
+  z-index: 1;
   width: 50%;
   height: 100%;
   overflow: visible;
@@ -175,15 +183,17 @@ main section section.right iframe {
   }
 }
 
-main section section.right .btn_scroll_down {
+main section .btn_scroll_down {
   width: 8vw;
   height: 8vw;
   text-align: center;
   border-radius: 100%;
   background-color: #fcee21;
   position: absolute;
-  left: 8px;
-  bottom: 0px;
+  left: 50%;
+  bottom: 30%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   z-index: 1;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
@@ -199,7 +209,7 @@ main section section.right .btn_scroll_down {
   cursor: pointer;
 }
 
-main section section.right .btn_scroll_down:before {
+main section .btn_scroll_down:before {
   content: '';
   width: 100%;
   height: 100%;
@@ -214,24 +224,24 @@ main section section.right .btn_scroll_down:before {
           transition-duration: 0.3s;
 }
 
-main section section.right .btn_scroll_down svg {
+main section .btn_scroll_down svg {
   z-index: 3;
   fill: #000;
   width: 24px;
   height: 24px;
 }
 
-main section section.right .btn_scroll_down:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+main section .btn_scroll_down:hover {
+  -webkit-transform: translate(-50%, 0%) scale(1.2);
+          transform: translate(-50%, 0%) scale(1.2);
 }
 
-main section section.right .btn_scroll_down:hover:before {
+main section .btn_scroll_down:hover:before {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-main section section.right .btn_scroll_down:hover svg {
+main section .btn_scroll_down:hover svg {
   fill: #fff;
 }
 /*# sourceMappingURL=index.css.map */
