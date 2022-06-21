@@ -38,7 +38,7 @@ function runMatter() {
       width: dimensions.width,
       height: dimensions.height,
       wireframes: false,
-      background: 'rgb(240,240,240)' } });
+      background: 'rgba(240,240,240)' } });
 
 
 
