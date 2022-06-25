@@ -11,13 +11,6 @@ body {
   height: 1000px;
 }
 
-#wrapper-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,61 +29,66 @@ main section.about_me {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #333;
+  width: 100%;
+  height: 100vh;
+}
+
+main section.about_me side {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+}
+
+main section.about_me side p.title {
+  font-size: 4rem;
+  color: #fff;
+  margin: 0px;
+  z-index: 5;
+  position: absolute;
+}
+
+main section.about_me side p.title::after {
+  content: '';
+  background-image: url(../img/index/);
+}
+
+main section.about_me side .l {
+  width: 62%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100vh;
-  margin-top: 36px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+main section.about_me side .r {
+  width: 38%;
+  height: 100%;
 }
 
 main section.about_me .info_card {
-  position: relative;
+  position: static;
   z-index: 1;
-  width: 50%;
+  width: 100%;
   height: 50%;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  margin: 16px;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.397);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
 }
 
-main section.about_me .info_card h1 {
-  text-align: center;
-  border-bottom: #000 solid 1px;
-  margin: 0px;
-  padding: 16px 0px;
-  font-weight: normal;
-  letter-spacing: 8px;
-  border-radius: 8px 8px 0px 0px;
-  background-color: #e9e8e8;
-}
-
-main section.about_me .info_card::after {
-  content: 'UI / UX Web\A Designer';
-  white-space: pre-line;
-  font-size: 4rem;
-  font-weight: normal;
-  line-height: -5%;
-  position: absolute;
-  top: 50%;
-  right: -100px;
-}
-
 main section.about_me .info_card:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-}
-
-main section.about_me .info_card:hover::after {
-  color: #fff;
 }
 
 main section.about_me iframe {
@@ -102,8 +100,16 @@ main section.about_me iframe {
   overflow: visible;
 }
 
-main section.about_me h1 {
-  z-index: 1;
+main section.about_me h1.self_intro {
+  z-index: 3;
+  width: 100%;
+  font-size: 2rem;
+  color: black;
+  border-radius: 8px;
+  margin: 0px;
+  margin-top: 4px;
+  font-weight: normal;
+  padding: 1px;
 }
 
 main section.about_me .btn_scroll_down {
@@ -112,11 +118,6 @@ main section.about_me .btn_scroll_down {
   text-align: center;
   border-radius: 100%;
   background-color: #fcee21;
-  position: absolute;
-  left: 50%;
-  bottom: 16px;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
   z-index: 1;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
@@ -155,8 +156,8 @@ main section.about_me .btn_scroll_down svg {
 }
 
 main section.about_me .btn_scroll_down:hover {
-  -webkit-transform: translate(-50%, 0%) scale(1.2);
-          transform: translate(-50%, 0%) scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main section.about_me .btn_scroll_down:hover:before {

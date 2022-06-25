@@ -54,9 +54,10 @@ function runMatter() {
   Math.max(dimensions.width / 4, dimensions.height / 4) / 2,
   {
     render: {
-      fillStyle: `rgb(240,240,240)`,
-      strokeStyle: `rgb(240,240,240)`,
+      fillStyle: `#333`,
+      strokeStyle: `#333`,
       lineWidth: 0 },
+      // rgb(240,240,240)
 
     isStatic: true,
     plugin: {
@@ -90,11 +91,12 @@ function runMatter() {
       frictionAir: 0.02,
       angle: Math.round(Math.random() * 360),
       render: {
-        fillStyle: '#FFFFFF',
-        strokeStyle: `#DDDDDD`,
+        fillStyle: '#444',
+        strokeStyle: `#444`,
         lineWidth: 2 } });
 
-
+        // #FFFFFF
+        // #DDDDDD
 
 
     World.add(world, body);
@@ -106,8 +108,8 @@ function runMatter() {
       friction: 0,
       frictionAir: 0.01,
       render: {
-        fillStyle: r > 0.3 ? `#4267F8` : `rgb(240,240,240)`,
-        strokeStyle: `#3257E8   `,
+        fillStyle: r > 0.3 ? `#444` : `#666`,
+        strokeStyle: `#444   `,
         lineWidth: 2 } });
 
 
@@ -118,8 +120,8 @@ function runMatter() {
       friction: 0,
       frictionAir: 0,
       render: {
-        fillStyle: r > 0.3 ? `#4267F8` : `rgb(240,240,240)`,
-        strokeStyle: `#3257E8`,
+        fillStyle: r > 0.3 ? `#444` : `#666`,
+        strokeStyle: `#444`,
         lineWidth: 4 } });
 
 
@@ -130,8 +132,8 @@ function runMatter() {
       friction: 0.6,
       frictionAir: 0.8,
       render: {
-        fillStyle: `rgb(240,240,240)`,
-        strokeStyle: `#FFFFFF`,
+        fillStyle: `#555`,
+        strokeStyle: `#666`,
         lineWidth: 3 } });
 
     World.add(world, circle);
