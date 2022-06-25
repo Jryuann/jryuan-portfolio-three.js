@@ -38,17 +38,12 @@ function runMatter() {
       width: dimensions.width,
       height: dimensions.height,
       wireframes: false,
-      background: 'rgba(240,240,240)' } });
-
+      background: '#333' } });
+      // rgba(240,240,240)
 
 
   // create runner
   var runner = Runner.create();
-
-  // Runner.run(runner, engine);
-  // Render.run(render);
-
-  // create demo scene
   var world = engine.world;
   world.gravity.scale = 0;
 
