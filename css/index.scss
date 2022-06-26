@@ -4,6 +4,11 @@
     font-family: 'Noto Sans TC', sans-serif;
     box-sizing: border-box;
     // border: 1px solid #000;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 body {
@@ -54,6 +59,7 @@ main {
                 z-index: 5;
                 position: absolute;
 
+
                 @media (max-width:650px) {
                     font-size: 2rem;
                 }
@@ -62,21 +68,34 @@ main {
                     position: fixed;
                     left: 0px;
                     top: 0px;
-
                     text-decoration: none;
-                    color: #fff;
+                    // color: #fff;
+                    color: #ffffff;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        display: block;
-                        right: 0px;
-                        top: 0px;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    transition-duration: 1s;
+
+                    span {
+                        display: inline-block;
+                        width: 62px;
+                        height: 62px;
                         background-image: url(../img/index/Frame66.png);
-                        width: 50px;
-                        height: 50px;
-                        z-index: 5;
+                        background-size: cover;
+                        margin-right: 12px;
+                        max-width: 0px;
+                        transition-duration: 1s;
                     }
+
+                    &:hover {
+                        color: #fcee21;
+
+                        span {
+                            max-width: 62px;
+                        }
+                    }
+
                 }
 
             }
@@ -172,7 +191,8 @@ main {
             padding: 1px;
 
             @media (max-width:650px) {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 100;
             }
         }
 
@@ -238,59 +258,99 @@ main {
 
     section.projects {
         width: 100%;
-        height: 150vh;
         background-color: #333;
-        padding: 48px 16px;
+        padding: 48px 5%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (max-width:650px) {
+            padding: 3rem 1rem;
+        }
 
         .project {
-            border: solid 1px white;
-            border-radius: 10px;
+            // border: solid 1px white;
+            width: 50%;
+            display: block;
+            // border-radius: 10px;
             overflow: hidden;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 1rem 1rem 1rem 0rem;
 
-            .mac-window {
-                width: 100%;
-                border-top: 2px solid white;
-                // border-radius: 10px 10px 0px 0px;
-                height: 36px;
-                background-color: white;
-                box-shadow: -5px 10px 40px 10px rgba(0, 0, 0, 0.30);
-
-                .window-control {
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 20px;
-                    margin: 2px;
-                    float: left;
-                    margin-top: 7px;
-                    margin-right: 5px;
-                }
-
-                .red {
-                    background-color: #df6961;
-                    margin-left: 10px;
-                }
-
-                .yellow {
-                    background-color: #f2bc57;
-                }
-
-                .green {
-                    background-color: #6bb358;
-                }
+            &:nth-child(4n+1) {
+                align-items: flex-start;
             }
-            .pj_img{
+            .text{
                 width: 100%;
-                height: calc(100% - 32px);
-                background-color: #444;
+
             }
 
+            figure {
+                width: 100%;
+                padding: 0px;
+                display: block;
+                margin: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition-duration: 0.5s;
+                border: #fff solid 1px;
+            }
+            &:nth-child(4n+0) .text,
+            &:nth-child(4n+1) .text,
+            &:nth-child(4n+0) figure,
+            &:nth-child(4n+1) figure {
+                width: 80%;
+            }
+
+            .pj_img {
+                width: 100%;
+                height: auto;
+                background-image: url(../img/projects/pj_liz.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            h3,
+            p {
+                font-size: 1.2rem;
+                margin: 0px 0px 4px;
+                color: #fff;
+                font-weight: normal;
+                line-height: 1;
+                letter-spacing: 2px;
+            }
+
+            h3 {
+                margin-top: 1rem;
+            }
+
+            p {
+                opacity: 0.5;
+            }
+
+            &:hover {
+                figure {
+                    padding: 10px;
+                }
+
+                .pj_img {}
+            }
 
             @media (max-width:650px) {
+                padding: 0rem;
                 width: 100%;
-                height: 30vh;
-                margin-bottom: 1rem;
+
+                &:nth-child(4n+0) figure,
+                &:nth-child(4n+1) figure {
+                    width: 100%;
+                }
+
             }
         }
+
     }
 
 }

@@ -3,6 +3,11 @@
   font-family: 'Noto Sans TC', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* a {
+  text-decoration: none;
 }
 
 body {
@@ -80,19 +85,36 @@ main section.about_me side p.title a.name {
   left: 0px;
   top: 0px;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
-main section.about_me side p.title a.name::after {
-  content: '';
-  position: absolute;
-  display: block;
-  right: 0px;
-  top: 0px;
+main section.about_me side p.title a.name span {
+  display: inline-block;
+  width: 62px;
+  height: 62px;
   background-image: url(../img/index/Frame66.png);
-  width: 50px;
-  height: 50px;
-  z-index: 5;
+  background-size: cover;
+  margin-right: 12px;
+  max-width: 0px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+main section.about_me side p.title a.name:hover {
+  color: #fcee21;
+}
+
+main section.about_me side p.title a.name:hover span {
+  max-width: 62px;
 }
 
 main section.about_me side .l {
@@ -204,7 +226,8 @@ main section.about_me h1.self_intro {
 
 @media (max-width: 650px) {
   main section.about_me h1.self_intro {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 100;
   }
 }
 
@@ -274,60 +297,113 @@ main section.skill {
 
 main section.projects {
   width: 100%;
-  height: 150vh;
   background-color: #333;
-  padding: 48px 16px;
+  padding: 48px 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 650px) {
+  main section.projects {
+    padding: 3rem 1rem;
+  }
 }
 
 main section.projects .project {
-  border: solid 1px white;
-  border-radius: 10px;
+  width: 50%;
+  display: block;
   overflow: hidden;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 1rem 1rem 1rem 0rem;
 }
 
-main section.projects .project .mac-window {
+main section.projects .project:nth-child(4n+1) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+main section.projects .project .text {
   width: 100%;
-  border-top: 2px solid white;
-  height: 36px;
-  background-color: white;
-  -webkit-box-shadow: -5px 10px 40px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: -5px 10px 40px 10px rgba(0, 0, 0, 0.3);
 }
 
-main section.projects .project .mac-window .window-control {
-  width: 15px;
-  height: 15px;
-  border-radius: 20px;
-  margin: 2px;
-  float: left;
-  margin-top: 7px;
-  margin-right: 5px;
+main section.projects .project figure {
+  width: 100%;
+  padding: 0px;
+  display: block;
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  border: #fff solid 1px;
 }
 
-main section.projects .project .mac-window .red {
-  background-color: #df6961;
-  margin-left: 10px;
-}
-
-main section.projects .project .mac-window .yellow {
-  background-color: #f2bc57;
-}
-
-main section.projects .project .mac-window .green {
-  background-color: #6bb358;
+main section.projects .project:nth-child(4n+0) .text,
+main section.projects .project:nth-child(4n+1) .text,
+main section.projects .project:nth-child(4n+0) figure,
+main section.projects .project:nth-child(4n+1) figure {
+  width: 80%;
 }
 
 main section.projects .project .pj_img {
   width: 100%;
-  height: calc(100% - 32px);
-  background-color: #444;
+  height: auto;
+  background-image: url(../img/projects/pj_liz.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main section.projects .project h3,
+main section.projects .project p {
+  font-size: 1.2rem;
+  margin: 0px 0px 4px;
+  color: #fff;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+main section.projects .project h3 {
+  margin-top: 1rem;
+}
+
+main section.projects .project p {
+  opacity: 0.5;
+}
+
+main section.projects .project:hover figure {
+  padding: 10px;
 }
 
 @media (max-width: 650px) {
   main section.projects .project {
+    padding: 0rem;
     width: 100%;
-    height: 30vh;
-    margin-bottom: 1rem;
+  }
+  main section.projects .project:nth-child(4n+0) figure,
+  main section.projects .project:nth-child(4n+1) figure {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=index.css.map */
