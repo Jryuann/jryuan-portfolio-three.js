@@ -33,6 +33,17 @@ main section.about_me {
   height: 100vh;
 }
 
+@media (max-width: 650px) {
+  main section.about_me {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 main section.about_me side {
   position: relative;
   width: 50%;
@@ -43,12 +54,25 @@ main section.about_me side {
   display: flex;
 }
 
+@media (max-width: 650px) {
+  main section.about_me side {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
 main section.about_me side p.title {
   font-size: 4rem;
   color: #fff;
   margin: 0px;
   z-index: 5;
   position: absolute;
+}
+
+@media (max-width: 650px) {
+  main section.about_me side p.title {
+    font-size: 2rem;
+  }
 }
 
 main section.about_me side p.title a.name {
@@ -86,6 +110,22 @@ main section.about_me side .l {
           justify-content: end;
 }
 
+@media (max-width: 900px) {
+  main section.about_me side .l {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  main section.about_me side .l {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 main section.about_me side .r {
   width: 38%;
   height: 100%;
@@ -104,6 +144,12 @@ main section.about_me side .r {
           justify-content: center;
 }
 
+@media (max-width: 900px) {
+  main section.about_me side .r {
+    display: none;
+  }
+}
+
 main section.about_me .info_card {
   position: static;
   z-index: 1;
@@ -116,6 +162,18 @@ main section.about_me .info_card {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   border: rgba(255, 255, 255, 0.5) 1px solid;
+}
+
+@media (max-width: 650px) {
+  main section.about_me .info_card {
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
 }
 
 main section.about_me .info_card:hover {
@@ -139,9 +197,15 @@ main section.about_me h1.self_intro {
   border-radius: 8px;
   margin: 0px;
   margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   font-weight: normal;
   padding: 1px;
+}
+
+@media (max-width: 650px) {
+  main section.about_me h1.self_intro {
+    font-size: 1.5rem;
+  }
 }
 
 main section.about_me .btn_scroll_down {
@@ -163,6 +227,8 @@ main section.about_me .btn_scroll_down {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 main section.about_me .btn_scroll_down:before {
@@ -204,5 +270,64 @@ main section.about_me .btn_scroll_down:hover svg {
 main section.skill {
   width: 100%;
   height: 30vh;
+}
+
+main section.projects {
+  width: 100%;
+  height: 150vh;
+  background-color: #333;
+  padding: 48px 16px;
+}
+
+main section.projects .project {
+  border: solid 1px white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+main section.projects .project .mac-window {
+  width: 100%;
+  border-top: 2px solid white;
+  height: 36px;
+  background-color: white;
+  -webkit-box-shadow: -5px 10px 40px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: -5px 10px 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+main section.projects .project .mac-window .window-control {
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  margin: 2px;
+  float: left;
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+main section.projects .project .mac-window .red {
+  background-color: #df6961;
+  margin-left: 10px;
+}
+
+main section.projects .project .mac-window .yellow {
+  background-color: #f2bc57;
+}
+
+main section.projects .project .mac-window .green {
+  background-color: #6bb358;
+}
+
+main section.projects .project .pj_img {
+  width: 100%;
+  height: calc(100% - 32px);
+  background-color: #444;
+}
+
+@media (max-width: 650px) {
+  main section.projects .project {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=index.css.map */
