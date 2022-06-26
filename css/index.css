@@ -291,7 +291,7 @@ main section.about_me .btn_scroll_down:hover svg {
 
 main section.skill {
   width: 100%;
-  height: 30vh;
+  height: auto;
   background-color: #333;
 }
 
