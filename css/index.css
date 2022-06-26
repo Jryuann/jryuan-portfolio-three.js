@@ -92,7 +92,6 @@ main section.about_me side p.title a.name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
@@ -295,10 +294,40 @@ main section.skill {
   height: 30vh;
 }
 
+main .projects_title {
+  background-color: #333;
+  padding: 3rem 1rem 2rem 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main .projects_title .title {
+  font-size: 5rem;
+  line-height: 1;
+  color: #fff;
+  margin: 0px;
+}
+
+@media (max-width: 650px) {
+  main .projects_title {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  main .projects_title .title {
+    font-size: 2rem;
+  }
+}
+
 main section.projects {
   width: 100%;
   background-color: #333;
-  padding: 48px 5%;
+  padding: 0rem 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,7 +337,7 @@ main section.projects {
 
 @media (max-width: 650px) {
   main section.projects {
-    padding: 3rem 1rem;
+    padding: 0rem 1rem;
   }
 }
 
@@ -356,7 +385,9 @@ main section.projects .project figure {
           align-items: center;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  border: #fff solid 1px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: rgba(255, 255, 255, 0.5) 1px solid;
 }
 
 main section.projects .project:nth-child(4n+0) .text,
@@ -393,7 +424,7 @@ main section.projects .project p {
 }
 
 main section.projects .project:hover figure {
-  padding: 10px;
+  padding: 1rem;
 }
 
 @media (max-width: 650px) {
