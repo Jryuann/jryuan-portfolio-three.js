@@ -32,16 +32,31 @@ main {
             position: relative;
             width: 50%;
             height: 100vh;
+            padding-bottom: 36px;
+            display: flex;
+
             p.title{
                 font-size: 4rem;
                 color: #fff;
                 margin: 0px;
                 z-index: 5;
                 position: absolute;
-                &::after{
-                    content: '';
-                    background-image: url(../img/index/);
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        right: 0px;
+                        top: 0px;
+                        background-image: url(../img/index/Frame66.png);
+                        width: 50px;
+                        height: 50px;
+                        z-index: 5;
+                    }
                 }
+
             }
             .l{
                 width: 62%;
@@ -53,6 +68,11 @@ main {
             .r{
                 width: 38%;
                 height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
             
             }
         }
@@ -60,14 +80,15 @@ main {
             position: static;
             z-index: 1;
             width: 100%;
-            height: 50%;
+            height: 38%;
             transition-duration: 1s;
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.397);
+            background-color: rgba(255, 255, 255, 0);
             backdrop-filter: blur(8px);
+            border: rgba(255, 255, 255, 0.5) 1px solid;
 
             &:hover {
-                transform: scale(1.02);
+                background-color: rgba(255, 255, 255, 0.397);
                 // background-color: rgba(51, 51, 51, 0.356);
                 // &::after{
                 //     color: #fcee21;
@@ -89,14 +110,15 @@ main {
         h1.self_intro{
             z-index: 3;
             width: 100%;
-            font-size:2rem;
-            color: rgb(0, 0, 0);
+            font-size:1.5rem;
+            color: rgb(255, 255, 255);
             // background-color: rgba(255, 255, 255, 0.397);
             // backdrop-filter: blur(8px);
 
             border-radius: 8px;
             margin: 0px;
-            margin-top: 4px;
+            margin-top: 8px;
+            margin-bottom: 8px;
             font-weight: normal;
             padding: 1px;
         }
@@ -153,4 +175,5 @@ main {
             }
         }
     }
+    section
 }
