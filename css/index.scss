@@ -5,6 +5,14 @@
     box-sizing: border-box;
     // border: 1px solid #000;
     box-sizing: border-box;
+    ::-moz-selection { /* Code for Firefox */
+        background: #F1CE56 ;
+      }
+       
+      ::selection {
+        background: #F1CE56 ;
+      }
+      
 
     a {
         text-decoration: none;
