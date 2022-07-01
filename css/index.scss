@@ -6,11 +6,13 @@
     // border: 1px solid #000;
     box-sizing: border-box;
     ::-moz-selection { /* Code for Firefox */
-        background: #F1CE56 ;
+        color: #333;
+        background: #fcee21 ;
       }
        
       ::selection {
-        background: #F1CE56 ;
+        color: #333;
+        background: #fcee21 ;
       }
       
 
@@ -77,7 +79,7 @@ main {
                     top: 0px;
                     text-decoration: none;
                     // color: #fff;
-                    color: #ffffff;
+                    color: #fcee21;
 
                     display: flex;
                     align-items: center;
@@ -95,7 +97,7 @@ main {
                     }
 
                     &:hover {
-                        color: #fcee21;
+                        color: #ffffff;
 
                         span {
                             max-width: 62px;
