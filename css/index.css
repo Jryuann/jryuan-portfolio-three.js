@@ -300,10 +300,36 @@ main section.about_me .btn_scroll_down:hover svg {
   fill: #fff;
 }
 
-main section.skill {
+main footer.skill {
   width: 100%;
-  height: auto;
+  height: 48px;
   background-color: #333;
+}
+
+main footer.skill i {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  font-size: 48px;
+  color: #0a66c2;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main footer.skill i ::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+  border: #fcee21;
+}
+
+main footer.skill i:hover, main footer.skill i:focus, main footer.skill i:active {
+  color: #084e94;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main .projects_title {
@@ -443,6 +469,11 @@ main section.projects .project:hover figure {
   main section.projects .project {
     padding: 0rem;
     width: 100%;
+  }
+  main section.projects .project:nth-child(4n+0), main section.projects .project:nth-child(4n+0) {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   main section.projects .project:nth-child(4n+0) figure,
   main section.projects .project:nth-child(4n+1) figure {

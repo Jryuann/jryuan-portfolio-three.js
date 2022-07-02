@@ -5,16 +5,18 @@
     box-sizing: border-box;
     // border: 1px solid #000;
     box-sizing: border-box;
-    ::-moz-selection { /* Code for Firefox */
+
+    ::-moz-selection {
+        /* Code for Firefox */
         color: #333;
-        background: #fcee21 ;
-      }
-       
-      ::selection {
+        background: #fcee21;
+    }
+
+    ::selection {
         color: #333;
-        background: #fcee21 ;
-      }
-      
+        background: #fcee21;
+    }
+
 
     a {
         text-decoration: none;
@@ -259,30 +261,58 @@ main {
         }
     }
 
-    section.skill {
+    footer.skill {
         width: 100%;
-        height: auto;
+        height: 48px;
         background-color: #333;
+
+        i{  
+            position: fixed;
+            right: 24px;
+            bottom: 32px;
+            font-size: 48px;
+            color: #0a66c2;
+            transform: scale(1);
+            ::after{
+                content:'';
+                width: 100px;
+                height: 100px;
+                // background-image: url('../img/skill/me.jfif');
+                position: absolute;
+                left:0px;
+                top:-5px;
+                border: #fcee21;
+            }
+            &:hover,&:focus,&:active{
+                color: #084e94;
+                transform: scale(1.2);
+            }
+        }
     }
-    .projects_title{
+
+    .projects_title {
         background-color: #333;
-        padding:3rem 1rem 2rem 15rem;
+        padding: 3rem 1rem 2rem 15rem;
         display: flex;
         justify-content: flex-start;
-        .title{
+
+        .title {
             font-size: 5rem;
             line-height: 1;
             color: #fff;
             margin: 0px;
         }
-        @media (max-width:650px){
+
+        @media (max-width:650px) {
             justify-content: center;
-            padding:3rem 1rem 2rem 1rem;
-            .title{
+            padding: 3rem 1rem 2rem 1rem;
+
+            .title {
                 font-size: 2rem;
             }
         }
     }
+
     section.projects {
         width: 100%;
         background-color: #333;
@@ -306,10 +336,11 @@ main {
             align-items: flex-end;
             padding: 1rem 1rem 1rem 0rem;
 
-            &:nth-child(4n+1) {
+            &:nth-child(4n+1){
                 align-items: flex-start;
             }
-            .text{
+
+            .text {
                 width: 100%;
 
             }
@@ -327,6 +358,7 @@ main {
                 overflow: hidden;
                 border: rgba(255, 255, 255, 0.5) 1px solid;
             }
+
             &:nth-child(4n+0) .text,
             &:nth-child(4n+1) .text,
             &:nth-child(4n+0) figure,
@@ -371,7 +403,9 @@ main {
             @media (max-width:650px) {
                 padding: 0rem;
                 width: 100%;
-
+                &:nth-child(4n+0),&:nth-child(4n+0){
+                    align-items: flex-start;
+                }
                 &:nth-child(4n+0) figure,
                 &:nth-child(4n+1) figure {
                     width: 100%;
