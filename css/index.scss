@@ -263,8 +263,30 @@ main {
 
     footer.skill {
         width: 100%;
-        height: 48px;
         background-color: #333;
+        padding: 2rem 5%;
+        button{
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transform: scale(1);
+            transition-duration: 0.5s;
+            background-color: rgba(51, 51, 51, 0);
+            color: #fff;
+            border: #fff 1px solid;
+            h1{
+                font-weight: normal;
+            }
+            
+            &:hover,&:focus,&:active{
+                transform: scale(1.05);
+                background-color: rgba(255, 255, 255, 0.397);
+                backdrop-filter: blur(8px);
+                border: rgba(255, 255, 255, 0.5) 1px solid;
+            }
+        }
+        @media (max-width:650px) {
+            padding: 2rem 1rem;
+        }
 
         i{  
             position: fixed;
@@ -273,16 +295,8 @@ main {
             font-size: 48px;
             color: #0a66c2;
             transform: scale(1);
-            ::after{
-                content:'';
-                width: 100px;
-                height: 100px;
-                // background-image: url('../img/skill/me.jfif');
-                position: absolute;
-                left:0px;
-                top:-5px;
-                border: #fcee21;
-            }
+            z-index: 3;
+
             &:hover,&:focus,&:active{
                 color: #084e94;
                 transform: scale(1.2);
