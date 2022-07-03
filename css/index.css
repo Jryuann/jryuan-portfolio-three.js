@@ -315,11 +315,8 @@ main footer.skill button {
           transition-duration: 0.5s;
   background-color: rgba(51, 51, 51, 0);
   color: #fff;
-  border: #fff 1px solid;
-}
-
-main footer.skill button h1 {
-  font-weight: normal;
+  border: rgba(255, 255, 255, 0.5) 1px solid;
+  padding: 1px 0.5rem;
 }
 
 main footer.skill button:hover, main footer.skill button:focus, main footer.skill button:active {

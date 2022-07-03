@@ -271,10 +271,8 @@ main {
             transition-duration: 0.5s;
             background-color: rgba(51, 51, 51, 0);
             color: #fff;
-            border: #fff 1px solid;
-            h1{
-                font-weight: normal;
-            }
+            border: rgba(255, 255, 255, 0.5) 1px solid;
+            padding: 1px 0.5rem;
             
             &:hover,&:focus,&:active{
                 transform: scale(1.05);
