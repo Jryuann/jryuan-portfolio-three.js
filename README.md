@@ -1,2 +1,2 @@
-# jryuan-portfolio-three.js
+# jryuan
  portfolio
